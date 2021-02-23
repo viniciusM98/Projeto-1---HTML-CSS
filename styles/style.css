@@ -1,0 +1,10 @@
+header {
+  display: block;
+  position: fixed;
+}
+
+main {
+  display: flex;
+  position: relative;
+  left: 50%;
+}

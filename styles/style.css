@@ -269,3 +269,83 @@ button:focus{
   font-size: 20px;
   color: rgba(0,0,0,0.53);
 }
+/** Estilização da Propaganda **/
+.advertising{
+  display: inline-block;
+  padding: 16px 0px 0px 16px;
+  border: 1px solid rgba(0,0,0,0.14);
+  width: 400px;
+  height: 150px;
+  margin-top: 40px;
+  margin-bottom: 35px;
+}
+
+.image-adobe img{
+  position: absolute;
+  width: 100%;
+  max-width: 150px;
+  float: left;
+}
+
+.text{
+  color: #E57373;
+  margin-bottom: 50px;
+  margin-left: 165px;
+  font-size: 15px;
+  width: 200px;
+}
+
+.ads{
+  color: #E57373;
+  position: relative;
+  width: 100px;
+  margin-top: 60px;
+  margin-left: 280px;
+  font-size: 13px;
+}
+
+/** Estilização do Github **/
+.github-container{
+  display: block;
+  color: rgba(0,0,0,0.53);
+  border-top: 1px solid rgba(0,0,0,0.14);
+  padding: 14px;
+  height: 64px;
+  line-height: 36px;
+  font-size: .9rem;
+}
+
+.github-container .container{
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+  top: -20px;
+}
+
+.git-but{
+  position: relative;
+  width: 100px;
+  height: 40px;
+  background: #26a69a;
+  line-height: 40px;
+  font-size: 18px;
+  left: 500px;
+}
+
+.git-but:hover{
+  background: #39e0d0;
+  box-shadow: 0px 2px 3px #00000080;
+}
+
+.commit{
+  position: absolute;
+  left: -20px;
+}
+
+.number {
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #7dd9f7;
+}

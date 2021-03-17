@@ -27,7 +27,7 @@
             </a></li>
             <li class="search">
               <input type="search" id="input-zip" class="search-input" placeholder="Search">
-              <a id="search-btn" href=""><i class="fas fa-search"></i></a>
+              <a id="search-btn" data-modal-target="#zip-code-modal" href=""><i class="fas fa-search"></i></a>
             </li>
             <li class="text-menu"><a href="">About</a></li>
             <li class="text-menu"><a href="">Getting Started</a></li>
@@ -89,7 +89,14 @@
           </div>
         </div>
       </section>
-      <div id="zip-code"></div>
+      <div id="zip-code-modal" class="zip-code-modal">
+        <div class="modal-header">
+          <div class="modal-title"></div>
+          <a class="close-button" data-close-button><i class="fas fa-window-close"></i></a>
+        </div>
+        <div class="modal-main"></div>
+      </div>
+      <div id="overlay"></div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./app.js"></script>

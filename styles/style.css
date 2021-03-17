@@ -285,7 +285,7 @@ main .main-section{
 
 /** Estilização do botão **/
 
-button{
+.get-started, .upgrade, .git-but{
   width: 323px;
   height: 85px;
   background: #ee6e73;
@@ -302,12 +302,12 @@ button{
   margin: 0 13px 0 0;
 }
 
-button:hover{
+.get-started:hover, .upgrade:hover{
   background: #f5a5a8;
   box-shadow: 0px 2px 3px #00000080;
 }
 
-button:focus{
+.get-started:focus, .upgrade:focus{
   outline: 0;
 }
 
@@ -408,4 +408,75 @@ button:focus{
   margin-left: 20px;
   margin-right: 20px;
   color: #7dd9f7;
+}
+
+.zip-code-modal{
+  position: fixed;
+  top: 25%;
+  left: 60%;
+  transform: translate(-50%, 50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid #E57373;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 300px;
+  max-width: 80%;
+}
+
+.zip-code-modal.active {
+  transform: translate(-50%, 50%) scale(1);
+}
+
+
+.modal-header{
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #E57373;
+}
+
+.modal-title h1{
+  color: #E57373;
+  font-size: 1.5rem;
+}
+
+.modal-header .close-button{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #E57373;
+}
+
+.modal-header .close-button:hover{
+  color: #f5a5a8;
+}
+
+.modal-main {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-main p{
+  color: #6e6e6e;
 }

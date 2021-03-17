@@ -17,3 +17,11 @@ function adicionaDados(event) {
       console.log(err)
     })
 }
+
+function createLine(value) {
+  let line = document.createElement('p')
+  let text = document.createTextNode(value)
+
+  line.appendChild(text)
+  content.appendChild(line)
+}

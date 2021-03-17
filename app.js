@@ -11,10 +11,14 @@ function adicionaDados(event) {
 
   axios.get(`https://viacep.com.br/ws/${zipCode}/json/`)
     .then(res => {
-      console.log(res)
+      content.innerHTML = ''
+      createLine(res.data.logradouro)
+      createLine(res.data.localidade + '/' + res.data.uf)
+      createLine(res.data.bairro)
     })
     .catch(err => {
-      console.log(err)
+      content.innerHTML = ''
+      createLine('ERRO!')
     })
 }
 

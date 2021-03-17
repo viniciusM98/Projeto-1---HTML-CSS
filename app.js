@@ -9,8 +9,16 @@ function adicionaDados(event) {
   
   let zipCode = zipCodeField.value
 
+  zipCode = zipCode.replace(' ', '')
+  zipCode = zipCode.replace('.', '')
+  zipCode = zipCode.trim()
+
   axios.get(`https://viacep.com.br/ws/${zipCode}/json/`)
     .then(res => {
+      if(res.data.erro){
+        throw new Error('CEP inválido!')
+      }
+
       content.innerHTML = ''
       createLine(res.data.logradouro)
       createLine(res.data.localidade + '/' + res.data.uf)

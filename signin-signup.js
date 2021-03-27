@@ -26,7 +26,7 @@ button_login.addEventListener('click', (event) => {
 
   if(usern.value == storedUsername && passw.value == storedPassword) {
     alert('You are loged in')
-    window.location.href = "../../index.html"
+    window.location.href = "index.html"
   } else{
     alert('ERROR.')
   }

@@ -13,7 +13,7 @@ button_register.addEventListener('click', (event) => {
     localStorage.setItem('password', password.value)
     container.classList.remove('sign-up-mode')
   } else{
-    alert('ERRO')
+    alert('Algum dos Campos está vazio ou com menos de 3 caracteres!!!')
   }
 })
 

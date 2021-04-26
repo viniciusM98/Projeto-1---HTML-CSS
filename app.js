@@ -1,8 +1,8 @@
-let button = document.querySelector('#search-btn')
-let buttonClose = document.querySelector('#close-button')
-let zipCodeField = document.querySelector('#input-zip')
-let content = document.querySelector('#zip-code-modal .modal-main')
-let title = document.querySelector('#zip-code-modal .modal-title')
+const button = document.querySelector('#search-btn')
+const buttonClose = document.querySelector('#close-button')
+const countryField = document.querySelector('#input-zip')
+const content = document.querySelector('#zip-code-modal .modal-main')
+const title = document.querySelector('#zip-code-modal .modal-title')
 
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
@@ -44,28 +44,30 @@ function closeModal(modal) {
 }
 
 function adicionaDados() { 
-  let zipCode = zipCodeField.value
-  let zip = document.createElement('h1')
-  let txt = document.createTextNode(zipCode)
+  let country = countryField.value
+  let ctry = document.createElement('h1')
 
-  zipCode = zipCode.replace(' ', '')
-  zipCode = zipCode.replace('.', '')
-  zipCode = zipCode.trim()
+  country = country[0].toUpperCase() + country.substr(1)
+  country = country.trim()
 
+  let txt = document.createTextNode(country)
+
+  console.log(country, country[0])
   title.innerHTML = ''
-  zip.appendChild(txt)
-  title.appendChild(zip)
+  ctry.appendChild(txt)
+  title.appendChild(ctry)
 
-  axios.get(`https://viacep.com.br/ws/${zipCode}/json/`)
+  axios.get(`https://covid-api.mmediagroup.fr/v1/cases?country=${country}`)
     .then(res => {
       if(res.data.erro){
-        throw new Error('CEP inválido!')
+        throw new Error('País inválido!')
       }
 
       content.innerHTML = ''
-      createLine(res.data.logradouro)
-      createLine(res.data.localidade + '/' + res.data.uf)
-      createLine(res.data.bairro)
+      createLine(`País: ${res.data.All.country}`)
+      createLine(`Casos confirmados: ${res.data.All.confirmed}`)
+      createLine(`Casos Recuperados: ${res.data.All.recovered}`)
+      createLine(`Mortes: ${res.data.All.deaths}`)
     })
     .catch(err => {
       content.innerHTML = ''

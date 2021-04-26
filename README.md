@@ -8,3 +8,9 @@ Nomes:
        Vinicius Medeiros da Silva  Ra:1914880
 
 Deploy link: https://materializecopy.herokuapp.com/ 
+
+# Projeto 2: HTML-CSS-JS
+<h2>Como usar a API Covid-19</h2>
+Para a utilização correta da API, é necessário utilizar nomes em inglês na pesquisa. Exemplo: Brazil, US, Canada...
+
+Link do repositório para a API pública: <a href="https://github.com/M-Media-Group/Covid-19-API">API Covid 19</a>

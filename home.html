@@ -9,14 +9,14 @@
     <title>Document</title> 
   </head>
   <body>
-    <div class="container">
+    <div id="container" class="container">
       <div class="forms-container">
-        <div class="signin-signup">
+        <div id="signin-signup" class="signin-signup">
           <form action="" class="sign-in-form">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" id="user-login" placeholder="Username">
+              <i class="fas fa-envelope"></i>
+              <input type="text" id="user-login" placeholder="E-mail">
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
@@ -44,10 +44,6 @@
           <form action="" class="sign-up-form">
             <h2 class="title">Sign up</h2>
             <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input id="username-su" type="text" placeholder="Username" required>
-            </div>
-            <div class="input-field">
               <i class="fas fa-envelope"></i>
               <input id="email-su" type="text" placeholder="Email" required>
             </div>
@@ -58,7 +54,7 @@
             <input type="submit" value="Sign Up" id="button-su" class="btn solid" required>
 
             <p class="social-text">Or Sign up with social platforms</p>
-            <div class="social-media">
+            <div id="#social-m" class="social-media">
               <a href="#" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
               </a>
@@ -98,8 +94,7 @@
         </div>
       </div>
     </div>
-
-    <script src="login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="signin-signup.js"></script>
   </body>
 </html>

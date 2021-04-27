@@ -9,6 +9,13 @@ const materialize_visible = document.querySelector(".materialize-visualization")
 const login_visible = document.querySelector(".login-visualization")
 const sign_out_btn = document.querySelector(".github-button")
 
+if(localStorage.getItem('token')){
+  materialize_visible.classList.remove("materialize-visualization")
+  materialize_visible.classList.add("materialize-visualization-true")
+  login_visible.classList.remove("login-visualization")
+  login_visible.classList.add("login-visualization-false")
+}
+
 sign_up_btn.addEventListener('click', () => {
   containerLogin.classList.add('sign-up-mode')
 })
@@ -32,6 +39,7 @@ button_register.addEventListener('click', (event) => {
       password: password.value
     })
     .then(res => {
+      console.log(res.status)
       if(res.status === 200){
         createLineLogin("Cadastrado realizado com sucesso!")
 
@@ -39,23 +47,19 @@ button_register.addEventListener('click', (event) => {
       }
     })
     .catch(err => {
-      if(email.value.length > 3 && password.value.length > 3){
-        if(email.value === storedEmail){
-          createLineLogin("E-mail já existente!")
-        }else{
-          localStorage.setItem('email', email.value)
-          localStorage.setItem('password', password.value)
-
-          createLineLogin("Cadastro realizado com sucesso via localStorage!")
-          containerLogin.classList.remove('sign-up-mode')
-        }
+      if(email.value === storedEmail){
+        createLineLogin("E-mail já existente!")
       }else{
-        createLineLogin("ERRO!")
+        localStorage.setItem('email', email.value)
+        localStorage.setItem('password', password.value)
+
+        createLineLogin("Cadastro realizado com sucesso via localStorage!")
+        containerLogin.classList.remove('sign-up-mode')
       }
     })
     
   } else{
-    createLineLogin("Algum dos Campos está vazio ou com menos de 3 caracteres!!!")
+    createLineLogin("Algum dos campos está vazio ou com menos de 3 caracteres!!!")
   }
 })
 

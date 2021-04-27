@@ -57,7 +57,8 @@ function adicionaDados() {
   ctry.appendChild(txt)
   title.appendChild(ctry)
 
-  axios.get(`https://covid-api.mmediagroup.fr/v1/cases?country=${country}`)
+  if(country.length > 3){
+    axios.get(`https://covid-api.mmediagroup.fr/v1/cases?country=${country}`)
     .then(res => {
       if(res.data.erro){
         throw new Error('País inválido!')
@@ -73,6 +74,10 @@ function adicionaDados() {
       content.innerHTML = ''
       createLine('ERRO!')
     })
+  }else{
+    createLine("Campo vazio ou com menos de três caracteres!!")
+  }
+  
 }
 
 function createLine(value) {

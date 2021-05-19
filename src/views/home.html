@@ -106,15 +106,15 @@
       <div class="container-login">
         <div class="forms-container">
           <div id="signin-signup" class="signin-signup">
-            <form action="" class="sign-in-form">
+            <form action="auth/authenticate" class="sign-in-form" method="POST">
               <h2 class="title">Sign in</h2>
               <div class="input-field">
                 <i class="fas fa-envelope"></i>
-                <input type="text" id="user-login" placeholder="E-mail">
+                <input type="text" id="user-login" placeholder="E-mail" name="email">
               </div>
               <div class="input-field">
                 <i class="fas fa-lock"></i>
-                <input type="password" id="password-login" placeholder="Password">
+                <input type="password" id="password-login" placeholder="Password" name="password">
               </div>
               <input type="submit" id="button-login" value="Login" class="btn solid">
   

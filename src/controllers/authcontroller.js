@@ -12,7 +12,7 @@ router.post('/register', async (req, res) =>{
         const user = await User.create(req.body);
         user.pasword = undefined;
         return res.send({user});
-    } catch (err) {
+    }catch (err) {
         return res.status(400).send({error: 'Registro invalido!!!'})
     }
 

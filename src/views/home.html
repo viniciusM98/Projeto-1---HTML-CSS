@@ -72,10 +72,13 @@
             </div>
             <div class="row-content">
               <div class="advertising">
-                <a href="" class="image-adobe"><img src="../public/images/adobe_stock.jpg" alt="Adobe Stock">
-                <div class="text">Limited time offer: Get 10 free Adobe Stock images.</div>
-                <div class="ads">ads via Carbon</div>
-                </a>
+                <form action="">
+                  <input id="country" type="text" placeholder="Country" name="country" required>
+                  <input id="confirmed" type="text" placeholder="Confirmed cases" name="confirmed" required>
+                  <input id="recovered" type="text" placeholder="Recovered cases" name="recovered" required>
+                  <input id="deaths" type="text" placeholder="Deaths" name="deaths" required>
+                  <button id="post-button">POST</button>
+                </form>
               </div>
             </div>
           </div>
@@ -191,8 +194,7 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- <script src="../public/app.js"></script> -->
-    <!-- <script src="../public/index.js"></script> -->
+    <script src="../public/app.js"></script>
     <script src="../public/signin-signup.js"></script>
   </body>
 </html>

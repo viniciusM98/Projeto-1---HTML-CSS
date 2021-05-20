@@ -37,10 +37,8 @@ button_register.addEventListener('click', (event) => {
   })
   .then(res => {
     console.log(res.status)
-    
     if(res.status === 200){
       createLineLogin("Cadastrado realizado com sucesso!")
-
       containerLogin.classList.remove('sign-up-mode')
     }
   })
@@ -72,15 +70,6 @@ button_login.addEventListener('click', async(event) => {
       } 
     })
     .catch(err => {
-     /* if(email_login.value === res.email && passw.value === res.passw){
-        createLineLogin("Logado com sucesso via localStorage!")
-        materialize_visible.classList.remove("materialize-visualization")
-        materialize_visible.classList.add("materialize-visualization-true")
-        login_visible.classList.remove("login-visualization")
-        login_visible.classList.add("login-visualization-false")
-      }else{
-        createLineLogin("ERRO!")
-      }*/
       createLineLogin("ERRO!")
     })
 })

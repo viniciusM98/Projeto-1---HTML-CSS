@@ -8,79 +8,63 @@ const containerLogin = document.querySelector(".container-login")
 const materialize_visible = document.querySelector(".materialize-visualization")
 const login_visible = document.querySelector(".login-visualization")
 const sign_out_btn = document.querySelector(".github-button")
-/*
-if(localStorage.getItem('token')){
+
+if(sessionStorage.getItem('token')){
   materialize_visible.classList.remove("materialize-visualization")
   materialize_visible.classList.add("materialize-visualization-true")
   login_visible.classList.remove("login-visualization")
   login_visible.classList.add("login-visualization-false")
-}*/
+}
 
 sign_up_btn.addEventListener('click', () => {
   containerLogin.classList.add('sign-up-mode')
 })
 
 sign_out_btn.addEventListener('click', () => {
-  localStorage.removeItem('token')
+  sessionStorage.removeItem('token')
   materialize_visible.classList.add("materialize-visualization")
   materialize_visible.classList.remove("materialize-visualization-true")
   login_visible.classList.add("login-visualization")
   login_visible.classList.remove("login-visualization-false")
 })
-/*
+
 button_register.addEventListener('click', (event) => {
   event.preventDefault()
 
-  let storedEmail = localStorage.getItem('email')
-
-  if(email.value.length > 3 && password.value.length > 3){
-    axios.post(`/register`, {
-      email: email.value,
-      password: password.value
-    })
-    .then(res => {
-      console.log(res.status)
-      
-      if(res.status === 200){
-        createLineLogin("Cadastrado realizado com sucesso!")
-
-        containerLogin.classList.remove('sign-up-mode')
-      }
-    })
-    .catch(err => {
-      if(email.value === storedEmail){
-        createLineLogin("E-mail já existente!")
-      }else{
-        localStorage.setItem('email', email.value)
-        localStorage.setItem('password', password.value)
-
-        createLineLogin("Cadastro realizado com sucesso via localStorage!")
-        containerLogin.classList.remove('sign-up-mode')
-      }
-    })
+  axios.post('http://localhost:3000/auth/register', {
+    email: email.value,
+    password: password.value
+  })
+  .then(res => {
+    console.log(res.status)
     
-  } else{
-    createLineLogin("Algum dos campos está vazio ou com menos de 3 caracteres!!!")
-  }
+    if(res.status === 200){
+      createLineLogin("Cadastrado realizado com sucesso!")
+
+      containerLogin.classList.remove('sign-up-mode')
+    }
+  })
 })
 
-button_login.addEventListener('click', (event) => {
+button_login.addEventListener('click', async(event) => {
   event.preventDefault()
+  console.log("login")
 
   let email_login = document.querySelector('#user-login')
   let passw = document.querySelector('#password-login')
 
-  let storedEmail = localStorage.getItem('email')
-  let storedPassword = localStorage.getItem('password')
+  console.log(email_login.value, passw.value)
 
-  axios.post(`https://reqres.in/api/login`, {
+  await axios.post('/auth/authenticate', {
       email: email_login.value,
       password: passw.value
     })
     .then(res => {
+      console.log(res.status)
       if(res.status === 200){
+        console.log("entrei")
         createLineLogin("Logado com sucesso!")
-        localStorage.setItem('token', res.data.token)
+        sessionStorage.setItem('token', res.data.token)
         materialize_visible.classList.remove("materialize-visualization")
         materialize_visible.classList.add("materialize-visualization-true")
         login_visible.classList.remove("login-visualization")
@@ -88,7 +72,7 @@ button_login.addEventListener('click', (event) => {
       } 
     })
     .catch(err => {
-      if(email_login.value === storedEmail && passw.value === storedPassword){
+     /* if(email_login.value === res.email && passw.value === res.passw){
         createLineLogin("Logado com sucesso via localStorage!")
         materialize_visible.classList.remove("materialize-visualization")
         materialize_visible.classList.add("materialize-visualization-true")
@@ -96,7 +80,8 @@ button_login.addEventListener('click', (event) => {
         login_visible.classList.add("login-visualization-false")
       }else{
         createLineLogin("ERRO!")
-      }
+      }*/
+      createLineLogin("ERRO!")
     })
 })
 
@@ -108,4 +93,4 @@ function createLineLogin(value) {
 
   line.appendChild(text)
   message_loged.appendChild(line)
-}*/
+}

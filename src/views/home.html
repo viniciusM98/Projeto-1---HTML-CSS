@@ -85,7 +85,7 @@
                 <div class="commit">Latest Commit on Github: 
                   <a href="" class="number">824e78248b3de81e383445e76ffb04cc3264fe7d</a>
                   <span class="date">9 months ago</span>
-                  <a href="" class="github-button"><button class="git-but">SAIR</button></a>
+                  <a class="github-button"><button class="git-but">SAIR</button></a>
                 </div>
               </div>
             </div>
@@ -101,20 +101,19 @@
         <div id="overlay"></div>
       </main>
     </div>
-
     <div class="login-visualization">
       <div class="container-login">
         <div class="forms-container">
           <div id="signin-signup" class="signin-signup">
-            <form action="auth/authenticate" class="sign-in-form" method="POST">
+            <form action="" class="sign-in-form">
               <h2 class="title">Sign in</h2>
               <div class="input-field">
                 <i class="fas fa-envelope"></i>
-                <input type="text" id="user-login" placeholder="E-mail" name="email">
+                <input type="text" id="user-login" placeholder="E-mail" >
               </div>
               <div class="input-field">
                 <i class="fas fa-lock"></i>
-                <input type="password" id="password-login" placeholder="Password" name="password">
+                <input type="password" id="password-login" placeholder="Password" >
               </div>
               <input type="submit" id="button-login" value="Login" class="btn solid">
   
@@ -133,9 +132,10 @@
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </div>
+
             </form>
   
-            <form action="auth/register" class="sign-up-form" method="POST">
+            <form action="" class="sign-up-form">
               <h2 class="title">Sign up</h2>
               <div class="input-field">
                 <i class="fas fa-envelope"></i>
@@ -145,7 +145,7 @@
                 <i class="fas fa-lock"></i>
                 <input id="password-su" type="password" placeholder="Password" name="password" required>
               </div>
-              <input type="submit" value="Sign Up" id="button-su" class="btn solid" required>
+             <input type="submit" value="Sign Up" id="button-su" class="btn solid" required>
   
               <p class="social-text">Or Sign up with social platforms</p>
               <div id="#social-m" class="social-media">
@@ -189,8 +189,10 @@
         </div>
       </div>
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- <script src="../public/app.js"></script> -->
+    <!-- <script src="../public/index.js"></script> -->
     <script src="../public/signin-signup.js"></script>
   </body>
 </html>

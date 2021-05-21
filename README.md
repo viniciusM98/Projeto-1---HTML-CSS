@@ -23,3 +23,11 @@ Além disso, fora implementado um login alternativo via localStorage.
 Para a utilização correta da API, é necessário utilizar nomes em inglês na pesquisa. Exemplo: Brazil, US, Canada...
 
 Link do repositório para a API pública: <a href="https://github.com/M-Media-Group/Covid-19-API">API Covid 19</a>
+
+# Projeto 3: Implementação de servidor na aplicação
+<h2>Utilização</h2>
+Para utilização da aplicação, é necessário executar o comando 'npm install' seguido do 'npm start' ou 'npm run dev' para executar o servidor.
+
+O sistema se baseia em adicionar países e seus dados relacionados ao COVID. A pesquisa do país é realizada no input no dashboard à esquerda.
+
+Link do deploy: https://materializecopy.herokuapp.com/

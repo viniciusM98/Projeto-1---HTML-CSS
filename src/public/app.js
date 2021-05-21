@@ -20,7 +20,6 @@ const overlay = document.getElementById('overlay')
 button_post.addEventListener('click', async(event) => {
   event.preventDefault();
 
-  console.log('entrei aqui')
   await axios.post('https://materializecopy.herokuapp.com/user/post', {
     country: country_field.value,
     confirmed: confirmed_field.value,
@@ -102,7 +101,7 @@ function adicionaDados() {
   ctry.appendChild(txt)
   title.appendChild(ctry)
 
-  if(country.length > 3){
+  if(country.length >= 3){
 
     console.log(country.toLowerCase())
     axios.post('https://materializecopy.herokuapp.com/user/busca', {

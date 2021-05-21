@@ -39,4 +39,4 @@ app.get('/login', (req, res) =>{
 require('./controllers/projectController')(app);
 require('./controllers/authController')(app);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
